@@ -23,6 +23,8 @@
   --highlight: #f9bc60;
   --secondary: #abd1c6;
   --tertiary: #e16162;
+
+  --shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.2);
 }
 
 a {

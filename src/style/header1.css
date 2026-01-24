@@ -7,12 +7,13 @@
     height: 4em;
     z-index: 999;
 }
-
+/* #head .nav-container{
+    margin: 0 0 0 8%;
+} */
 #head .nav-links{
     display: flex;
     list-style: none;
     gap: 2em;
-    border: 1px solid #bbbbbb52;
     border-radius: 20px;
     padding: 0.8em 2em;
 }

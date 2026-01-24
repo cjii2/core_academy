@@ -13,7 +13,7 @@ class anmtionForDesktop{
     activeAnmtion(){
         window.addEventListener('DOMContentLoaded',()=>{
             gsap.registerPlugin(CustomEase,ScrollTrigger);
-            CustomEase.create('hop','0.9 , 0 , 0.1 , 1')
+            CustomEase.create('hop','.4,0,.47,1')
 
             this.mm.add(`(min-width: ${this.S}px)`,()=>{
                 this.HomeSection();
@@ -22,12 +22,27 @@ class anmtionForDesktop{
     }
 
     HomeSection(){
-        const tagImg = document.querySelector(".img-bg");
+        const tagImg = document.querySelector(".D-desktop");
+        const homeContent = document.querySelectorAll('.home-content *');
+        const headerElemnt = document.querySelectorAll('.nav-links li');
 
-        gsap.to(tagImg,{
-            clipPath: "inset(0 0 0 0)",
-            ease: "hop",
+        this.tl.from(tagImg,{
+            yPercent:-200,
+            duration:1,
+            ease:"hop"
         })
+        .from( headerElemnt ,{
+            opacity:0,
+            x: -50,
+            duration:1,
+            stagger:0.14
+        })
+        .from( homeContent ,{
+            opacity:0,
+            y: -50,
+            duration:0.5,
+            stagger:0.3
+        },'<')
 
     }
 }
