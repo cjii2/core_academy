@@ -8,7 +8,7 @@
     z-index: 999;
 }
 
-#head .closeMenu{
+.closeMenu{
     display: none;
 }
 #head .nav-container{
@@ -49,7 +49,7 @@
         height: 70%;
     }
 
-    #head .closeMenu{
+    .closeMenu{
         display: flex;
         align-items: center;
         justify-content: center;
