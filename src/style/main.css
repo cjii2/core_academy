@@ -2,42 +2,57 @@
 
 :root {
     /* مجموعه اولى */
-  --color-primary: #3A6EA5;
-  --color-secondary: #6FB1A0;
-  --color-accent: #F2B705;
-  --color-bg: #F6F8FA;
-  --color-text: #1F2933;
+    --color-primary: #3A6EA5;
+    --color-secondary: #6FB1A0;
+    --color-accent: #F2B705;
+    --color-bg: #F6F8FA;
+    --color-text: #1F2933;
 
     /* مجموعه ثانيه */
     /* Elements */
-  --bg-dark: #004643;
-  --text-heading: #ffffff;
-  --text-paragraph: #abd1c6;
-  --button-text: #001e1d;
-  --button-bg: #f9bc60;
-  --bg-light: #f8faf9;
+    --bg-dark: #004643;
+    --text-heading: #ffffff;
+    --text-paragraph: #abd1c6;
+    --button-text: #001e1d;
+    --button-bg: #f9bc60;
+    --button-hover: #ff9c08;
+    --bg-light: #f8faf9;
 
-  /* Illustration */
-  --stroke: #001e1d;
-  --main: #e8e4e6;
-  --highlight: #f9bc60;
-  --secondary: #abd1c6;
-  --tertiary: #e16162;
+    /* Illustration */
+    --stroke: #001e1d;
+    --main: #e8e4e6;
+    --highlight: #f9bc60;
+    --secondary: #abd1c6;
+    --tertiary: #e16162;
 
-  --shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.2);
+    /* CARDS */
+    --card-bg: #006A65;
+    --card-main-color: #DEDEDE;
+    --card-secondary-color: #DEDEDE;
 
-  --main-text-size: clamp(1.3rem,5vw,3rem);
-  --discrption-text-size: clamp(0.5rem ,30vw, 1rem);
+    --card-main-font-size: clamp(1rem , 4vw , 1.5rem);
+    --card-paragraph-font-size:clamp(0.3rem , 10vw , 0.7rem);
+
+    --shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.2);
+
+    --main-text-size: clamp(1.3rem,5vw,3rem);
+    --discrption-text-size: clamp(0.5rem ,30vw, 1rem);
 }
 
 a {
     text-decoration: none;
-    color: var(--text-heading);
+    color: var(--bg-light);
+    user-select: none;
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 button{
     border: none;
     outline: none;
+    cursor: pointer;
 }
 
 .filter{

@@ -19,6 +19,7 @@ class anmtionForDesktop{
             this.mm.add(`(min-width: ${this.S}px)`,()=>{
                 this.HomeSection();
                 this.aboutSection();
+                // this.programsSection();
             })
         })
     }
@@ -81,6 +82,36 @@ class anmtionForDesktop{
             stagger: 0.2,
             ease:'hop-tow'
         },'-=1.2')
+    }
+
+    programsSection(){
+        const header = document.querySelectorAll('#programs .programs-head-children');
+        const cards = document.querySelectorAll('#programs .card');
+
+        const tl = gsap.timeline({
+            scrollTrigger:{
+                trigger:'#programs',
+                start:'5% bottom',
+                end: 'bottom 50%',
+
+            }
+        })
+
+        tl.from(header,{
+            yPercent:110,
+            opacity:0,
+            duration:1,
+            stagger: 0.2,
+            ease: 'hop-tow'
+        })
+
+        tl.from(cards , {
+            yPercent:30,
+            opacity:0,
+            duration:1,
+            stagger: 0.2,
+            ease: 'hop-tow'
+        })
     }
 }
 

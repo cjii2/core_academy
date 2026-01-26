@@ -31,7 +31,7 @@
 }
 
 
-@media (max-width:650px) {
+@media (max-width: 650px) {
     #head{
         display: block;
         width: 45px;

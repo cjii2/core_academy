@@ -1,0 +1,79 @@
+#programs .card{
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    align-items: center;
+    text-align: end;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    border-radius: 28px;
+    background-color: var(--card-bg);
+    padding: 5%;
+}
+
+#programs .card ul{
+    list-style-type: none;
+}
+
+#programs .card ul li{
+    line-height: 1.2rem;
+}
+
+#programs .card ul span{
+    font-size: var(--card-paragraph-font-size);
+    color: var(--card-secondary-color);
+}
+
+#programs .card img{
+    width: 240px;
+    position: absolute;
+    bottom: 4%;
+    left: 1%;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+#programs .card h3{
+    font-size: var(--card-main-font-size);
+    color: var(--text-heading);
+    font-weight: 800;
+}
+
+#programs .card-head p{
+    font-size: var(--card-paragraph-font-size);
+    color: var(--card-secondary-color);
+    line-height: 1.2rem;
+    font-weight: 500;
+    /* margin-bottom: 2%; */
+}
+
+#programs .card .buy- a{
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    font-weight: 900;
+    padding: 0.2em 0.7em;
+    border-radius: 14px;
+    margin: 4% 0 0 0;
+    transition: 0.4s;
+}
+
+#programs .card .buy- a:hover{
+    background-color: var(--button-hover);
+}
+
+#programs .card .buy-{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-self: end;
+    margin: 0 0 2% 0;
+}
+
+#programs .card strong{
+    color: var(--card-main-color);
+    font-size: medium;
+    text-align: end;
+    width: 100%;
+}
