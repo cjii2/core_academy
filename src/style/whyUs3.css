@@ -1,6 +1,98 @@
 #whyUs{
-    position: relative;
+    /* position: relative; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
 }
 
+#whyUs .whyUs-content{
+    width: 80%;
+    height: 80%;
+}
+
+#whyUs .conatiner{
+    display: grid;
+    grid-template-columns: 1fr 30%;
+    grid-template-rows: 50% 50%;
+    gap: 1em;
+    width: 100%;
+    height: 100%;
+}
+
+#whyUs .conatiner .card{
+    border-radius: 3em;
+    padding: 1.3em;
+    text-align: end;
+}
+
+#whyUs .conatiner .card h2{
+    font-size: var(--card-main-font-size);
+    color: var(--main-font-color-whyUs);
+    font-weight: 900;
+}
+#whyUs .conatiner .card p{
+    font-size: var(--card-paragraph-font-size);
+    font-weight: 400;
+    color: var(--secendery-font-color-whyUs);
+    padding: 0 1em;
+}
+
+/* group one */
+#whyUs .smail-card-whyUs{
+    background: var(--smail-card-whyUs-Bg);
+}
+
+#whyUs .big-card-start{
+    position: relative;
+    background: var(--big-card-start-Bg);
+}
+
+#whyUs .big-card-start a{
+    background: var(--smail-card-whyUs-Bg);
+    position: absolute;
+    bottom: 10%;
+    left: 8%;
+    padding: 0.6em 2.5em;
+    font-size: clamp(0.7rem ,5vw ,1rem);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+}
+
+#whyUs .big-card-start a:hover{
+    transform: scale(1.05) translateY(-5px);
+}
+/* ------- */
+
+/* group tow */
+#whyUs .smail-card-course{
+    background: var(--smail-card-course-Bg) ;
+}
+
+#whyUs .big-card-stats{
+    background: var(--big-card-stats-Bg);
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(min(300px ,100%),1fr));
+    gap: 1em;
+}
+
+#whyUs .big-card-stats .stat-card{
+    border-radius: 1em;
+    text-align: center;
+    align-items: center;
+    padding: 7% 0 0 0;
+    box-shadow: var(--shadow);
+}
+
+
+#whyUs .big-card-stats .stat-card strong{
+    color: var(--stat-font-color-whyUs);
+    font-size: xx-large;
+}
+#whyUs .big-card-stats .stat-card h4{
+    font-size: clamp(0.9rem ,5vw ,1.2rem);
+    color: var(--main-font-color-whyUs);
+}
+/* ------- */

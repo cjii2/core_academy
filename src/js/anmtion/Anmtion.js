@@ -19,7 +19,8 @@ class anmtionForDesktop{
             this.mm.add(`(min-width: ${this.S}px)`,()=>{
                 this.HomeSection();
                 this.aboutSection();
-                // this.programsSection();
+                this.programsSection();
+                this.whyUsSection();
             })
         })
     }
@@ -112,6 +113,10 @@ class anmtionForDesktop{
             stagger: 0.2,
             ease: 'hop-tow'
         })
+    }
+
+    whyUsSection(){
+        
     }
 }
 
