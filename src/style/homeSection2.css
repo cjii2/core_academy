@@ -6,6 +6,8 @@
 
 #home .D-desktop{
     position: absolute;
+    object-fit: cover;
+    object-position: bottom;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -31,12 +33,13 @@
 
 #home .home-content h1{
     color: var(--text-heading);
-    font-size: var(--main-text-size);
+    font-size: var(--h1-font-size);
 }
 
 #home .home-content p{
     color: var(--text-paragraph);
-    font-size: clamp(0.4rem ,10vw, 0.8rem);
+    font-size: var(--p-font-size);
+    font-weight: 400;
     max-width: 60%;
 }
 

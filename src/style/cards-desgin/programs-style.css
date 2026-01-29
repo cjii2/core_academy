@@ -21,30 +21,30 @@
 }
 
 #programs .card ul span{
-    font-size: var(--card-paragraph-font-size);
+    font-size: var(--p2-font-size);
     color: var(--card-secondary-color);
 }
 
 #programs .card img{
     width: 240px;
     position: absolute;
-    bottom: 4%;
-    left: 1%;
+    bottom: 1em;
+    left: -1em;
     object-fit: cover;
     object-position: bottom;
 }
 
 #programs .card h3{
-    font-size: var(--card-main-font-size);
+    font-size: var(--h3-h4-font-size);
     color: var(--text-heading);
     font-weight: 800;
 }
 
 #programs .card-head p{
-    font-size: var(--card-paragraph-font-size);
+    font-size: var(--p2-font-size);
     color: var(--card-secondary-color);
     line-height: 1.2rem;
-    font-weight: 500;
+    font-weight: 300;
     /* margin-bottom: 2%; */
 }
 

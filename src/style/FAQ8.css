@@ -4,9 +4,7 @@
 }
 
 #FAQ .faq-head{
-    top: 10%;
     width: 100%;
-    height: 15%;
     color: var(--text-heading);
     display: flex;
     align-items: flex-end;
@@ -33,39 +31,46 @@
     height: 7%;
     overflow: hidden;
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
-    text-align: end;
+    text-align: start;
     direction: rtl;
     padding: 0 1em;
     transition: 0.4s;
 }
 
 #FAQ .qustion .qustion-content{
-    margin: 0.5% 3% 0 0;
+    height: 3em;
+    width: 100%;
+    gap: 0.5em;
+    position: relative;
     display: flex;
-    flex-direction: column;
+    align-items: center;
 }
 
 #FAQ .qustion .qustion-content h2{
-    text-align: start;
-    width: 100%;
-    font-size: var(--h2-font-size);
+    margin: 0 0.5em 0 0;
+    font-size: var(--h3-h4-font-size);
     color: var(--text-heading);
 }
 
 #FAQ .qustion button{
-    position: absolute;
-    top: 14px;
+    display: flex;
+    align-items: center;
     background-color: transparent;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid rgb(0,70, 67, 1);
+    transition: 0.5s;
 }
 
 #FAQ .qustion.open{
     height: 20%;
 }
-
-#FAQ .qustion button img{
-    transform: rotate(-90deg);
-}
+#FAQ .qustion.open button{
+    background-color: rgb(0,70, 67, 1);
+} 
 
 #FAQ .qustion.open p{
     display: block;
@@ -73,6 +78,9 @@
 
 #FAQ .qustion p{
     display: none;
+    position: absolute;
+    top: 40%;
+    right: 2em;
     color: var(--text-paragraph);
     font-size: var(--p-font-size);
 }

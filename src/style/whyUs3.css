@@ -1,27 +1,29 @@
 #whyUs{
-    /* position: relative; */
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
+    margin: 30% 0 10% 0;
 }
 
 #whyUs .whyUs-content{
-    width: 80%;
-    height: 80%;
+    width: 90%;
+    height: 90%;
 }
 
 #whyUs .conatiner{
     display: grid;
     grid-template-columns: 1fr 30%;
-    grid-template-rows: 50% 50%;
+    grid-template-rows: 1fr 1fr;
     gap: 1em;
     width: 100%;
     height: 100%;
 }
 
 #whyUs .conatiner .card{
+    height: 22em;
     border-radius: 3em;
     padding: 1.3em;
     text-align: end;
@@ -74,12 +76,15 @@
 #whyUs .big-card-stats{
     background: var(--big-card-stats-Bg);
     display: grid;
-    grid-template-columns: repeat(auto-fit , minmax(min(300px ,100%),1fr));
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 1fr 1fr;
     gap: 1em;
 }
 
 #whyUs .big-card-stats .stat-card{
     border-radius: 1em;
+    display: grid;
+    grid-template-rows: 40% auto;
     text-align: center;
     align-items: center;
     padding: 7% 0 0 0;
@@ -89,10 +94,36 @@
 
 #whyUs .big-card-stats .stat-card strong{
     color: var(--stat-font-color-whyUs);
-    font-size: xx-large;
+    font-size: var(--h2-font-size);
 }
 #whyUs .big-card-stats .stat-card h4{
-    font-size: clamp(0.9rem ,5vw ,1.2rem);
+    font-size: var(--h3-h4-font-size);
     color: var(--main-font-color-whyUs);
 }
 /* ------- */
+
+
+@media (max-width:840px) {
+    /* #whyUs{
+        margin: 10%;
+    } */
+
+    #whyUs .conatiner .card{
+        border-radius: 2em;
+        height: 20em;
+    }
+    #whyUs .conatiner{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 20em;
+        gap: 1em;
+        width: 90%;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    #whyUs .big-card-stats .stat-card h4, strong{
+        font-size: 0.7rem;
+        font-weight: 400;
+    }
+}

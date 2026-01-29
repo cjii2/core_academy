@@ -1,9 +1,11 @@
 function open_close_qustion(){
-    const btns = document.querySelectorAll('#FAQ .qustion button');
-    btns.forEach(btn=>{
-        btn.addEventListener('click',()=>{
-            // btns.forEach(e=>e.parentElement.classList.remove('open'));
-            btn.parentElement.classList.toggle('open');
+    const qusetions = document.querySelectorAll('#FAQ .qustion');
+    
+    qusetions.forEach(q=>{
+        const btns = q.querySelector('#FAQ .qustion button');
+
+        btns.addEventListener('click',()=>{
+            q.classList.toggle('open');
         });
     });
 }
