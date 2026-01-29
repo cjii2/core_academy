@@ -105,13 +105,22 @@ body {
 
 #whts-contect{
     position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: clamp(2.5em ,4vw,4em);
     height: clamp(2.5em ,4vw,4em);
     border-radius: 50%;
 
-    background-color: red;
+    background-color: lightseagreen;
 
     bottom: 0.5em;
     left: 0.5em;
     z-index: 10000;
+}
+
+#whts-contect img{
+    color: white;
+    width: clamp(1.5em ,3vw,2em);
+    height: auto;
 }
