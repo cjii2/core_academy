@@ -3,7 +3,10 @@ export class insertDataIntoInputs{
 
     insertDataIntoTags(url,elemnt){
         if(!url || !elemnt) return console.log("error in insertDataIntoTags into main.js");
-        fetch(url).then(res => res.json()).then(data =>{
+        fetch(url).then(res => {
+            if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+            return res.json();
+        }).then(data =>{
             elemnt.forEach((e,i)=>{
                 e.innerText = data.content[i]
                 e = null
@@ -14,7 +17,10 @@ export class insertDataIntoInputs{
 
     insertDataIntoLinks(url,elemnt){
         if(!url || !elemnt) return console.log("error in insertDataIntoLinks into main.js");
-        fetch(url).then(res=>res.json()).then(data=>{
+        fetch(url).then(res=>{
+            if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+            return res.json();
+        }).then(data=>{
             data.links.forEach((e,i)=>{
                 elemnt[i].textContent = e.title
                 elemnt[i].href = e.link
@@ -25,7 +31,10 @@ export class insertDataIntoInputs{
     inserDataIntoImg(url,elemnt){
         if(!url || !elemnt) return console.log("error in inserDataIntoImg into main.js");
 
-        fetch(url).then(res=>res.json()).then(data=>{
+        fetch(url).then(res=>{
+            if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+            return res.json();
+        }).then(data=>{
             data.img.forEach((e,i)=>{
                 elemnt[i].src = e.url
                 elemnt[i].alt = e.title
@@ -35,7 +44,10 @@ export class insertDataIntoInputs{
 
     creatCards(url,fatherOfcards,fillter){
         if(!url || !fatherOfcards) return console.log("error in creatCards into main.js");
-        fetch(url).then(res => res.json()).then(data=>{
+        fetch(url).then(res => {
+            if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+            return res.json();
+        }).then(data=>{
 
             data.cards_info.forEach((e,i) =>{
                 fatherOfcards.insertAdjacentHTML('beforeend',`
