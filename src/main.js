@@ -2,10 +2,10 @@ export class insertDataIntoInputs{
     constructor(){}
 
     insertDataIntoTags(url,elemnt){
+        if(!url || !elemnt) return console.log("error in insertDataIntoTags into main.js");
         fetch(url).then(res => res.json()).then(data =>{
-            if(!data) return;
             elemnt.forEach((e,i)=>{
-                e.innerText = data.content
+                e.innerText = data.content[i]
                 e = null
             });
 
@@ -13,29 +13,29 @@ export class insertDataIntoInputs{
     }
 
     insertDataIntoLinks(url,elemnt){
+        if(!url || !elemnt) return console.log("error in insertDataIntoLinks into main.js");
         fetch(url).then(res=>res.json()).then(data=>{
-            if(!data) return console.log("data is found");
-            data.data.forEach((e,i)=>{
-                elemnt.textContent = e.title
-                elemnt.href = e.link
+            data.links.forEach((e,i)=>{
+                elemnt[i].textContent = e.title
+                elemnt[i].href = e.link
             });
         });
     }
 
     inserDataIntoImg(url,elemnt){
-        if(!url && elemnt) return;
+        if(!url || !elemnt) return console.log("error in inserDataIntoImg into main.js");
 
         fetch(url).then(res=>res.json()).then(data=>{
             data.img.forEach((e,i)=>{
-                elemnt.src = e.url
-                elemnt.alt = e.title
+                elemnt[i].src = e.url
+                elemnt[i].alt = e.title
             })
         })
     }
 
     creatCards(url,fatherOfcards,fillter){
+        if(!url || !fatherOfcards) return console.log("error in creatCards into main.js");
         fetch(url).then(res => res.json()).then(data=>{
-            if(!data) return;
 
             data.cards_info.forEach((e,i) =>{
                 fatherOfcards.insertAdjacentHTML('beforeend',`

@@ -8,7 +8,8 @@ function open_close_menu(){
 function app(){
     const links = document.querySelectorAll('#head .nav-links a');
     const headerData = new insertDataIntoInputs();
-    headerData.insertDataIntoLinks('../../../src/json/headerSectionData/insertData.json',links);
+    const url = '../../../src/json/headerSectionData/insertData.json';
+    headerData.insertDataIntoLinks(url,links);
 }
 
 btn.addEventListener('click', open_close_menu);
