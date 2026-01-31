@@ -1,0 +1,24 @@
+{
+  "data": [
+    {
+        "title": "الرئيسية",
+        "link": "#home"
+    },
+    {
+        "title":"عن الاكادميه",
+        "link":"#about"
+    },
+    {
+        "title": "الدورات",
+        "link": "#programs"
+    },
+    {
+        "title":"لماذا نحن",
+        "link": "#whyUs"
+    },
+    {
+        "title": "الأسئلة الشائعة",
+        "link": "#FAQ"
+    }
+  ]
+}
