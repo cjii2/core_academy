@@ -6,7 +6,39 @@ const anmtionMobile  = new anmtionForMobile();
 
 export class insertDataIntoInputs{
     constructor(){}
+    fillterData(url,fatherOfcards,wordTofilter){
+        if(!url || !fatherOfcards) return console.log("error in creatCards into main.js");
+        fetch(url).then(res => {
+            if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+            return res.json();
+        }).then(data=>{
+            fatherOfcards.innerHTML ="";
+            const filter = data.cards_info.filter((e) =>{return e.level === wordTofilter || e.getAll === wordTofilter});
+            filter.forEach((e)=>{
+                fatherOfcards.insertAdjacentHTML('beforeend',`
+                    <article class="card">
+                        <header class="card-head">
+                            <h3>${e.title}</h3>
+                            <p>${e.content}</p>
+                        </header>
+                
+                        <ul>
+                            <li><span>${e.level} -</span></li>
+                            <li><span>${e.when}-</span></li>
+                            <li><span>${e.time}-</span></li>
+                        </ul>
+    
+                        <img src="${e.img.url}" alt="${e.img.title}">
+                        <div class="buy-">
+                            <strong>${e.price}${e.currency}</strong>
+                            <a target="_blank" href="https://wa.me/${e.phoneCountry}${e.phoneNumber}?text=${encodeURIComponent(e.message)}">${e.title_link}</a>
+                        </div>
+                    </article>
+                `);
+            });
 
+        });
+    }
     insertDataIntoTags(url,elemnt,log){
         if(log) console.log(log);
         if(!url || !elemnt) return console.log("error in insertDataIntoTags into main.js");
@@ -62,13 +94,14 @@ export class insertDataIntoInputs{
         })
     }
 
-    creatCards(url,fatherOfcards,fillter){
+    creatCards(url,fatherOfcards){
         if(!url || !fatherOfcards) return console.log("error in creatCards into main.js");
         fetch(url).then(res => {
             if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
             return res.json();
         }).then(data=>{
-
+            
+            fatherOfcards.innerHTML ="";
             data.cards_info.forEach((e,i) =>{
                 fatherOfcards.insertAdjacentHTML('beforeend',`
                     <article class="card">
@@ -90,7 +123,13 @@ export class insertDataIntoInputs{
                         </div>
                     </article>
                 `)
-            })
+            });
+
+            document.querySelectorAll("#programs .filter-btn").forEach(e=>{
+                e.addEventListener('click',()=>{
+                    this.fillterData(url,fatherOfcards,e.textContent)
+                });
+            });
             if(window.innerWidth < 800 ) return anmtionMobile.programsSection();
             anmtionDesktop.programsSection();
         })
@@ -114,7 +153,7 @@ export class insertDataIntoInputs{
                     </section>
                     `);
                 });
-                
+
                 const qusetions = document.querySelectorAll('#FAQ .qustion');
                 qusetions.forEach(q=>{
                     const btns = q.querySelector('#FAQ .qustion button');
@@ -129,3 +168,6 @@ export class insertDataIntoInputs{
             });
     }
 }
+
+
+// new insertDataIntoInputs().fillterData("src/json/programs/createCards.json",'d',"مبتدئ");
