@@ -7,7 +7,7 @@
 #home .D-desktop{
     position: absolute;
     object-fit: cover;
-    object-position: center;
+    object-position: right;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -55,6 +55,6 @@
 
 @media (max-width:600px) {
     #home .D-desktop{
-        object-position: -30em;
+        object-position: -50em;
     }
 }
