@@ -1,7 +1,14 @@
+import {anmtionForDesktop , anmtionForMobile} from '../src/js/anmtion/Anmtion.js'
+// import {open_close_qustion} from '../src/js/sectionsJS/FAQ.js'
+
+const anmtionDesktop = new anmtionForDesktop();
+const anmtionMobile  = new anmtionForMobile();
+
 export class insertDataIntoInputs{
     constructor(){}
 
-    insertDataIntoTags(url,elemnt){
+    insertDataIntoTags(url,elemnt,log){
+        if(log) console.log(log);
         if(!url || !elemnt) return console.log("error in insertDataIntoTags into main.js");
         fetch(url).then(res => {
             if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
@@ -14,7 +21,20 @@ export class insertDataIntoInputs{
 
         });
     }
+    insertDataIntoStats(url,elemnt){
+        if(!url || !elemnt) return console.log("error in insertDataIntoTags into main.js");
+        fetch(url).then(res => {
+            if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+            return res.json();
+        }).then(data =>{
+            elemnt.forEach((e,i)=>{
+                e.innerText = data.status[i]
+                e = null
+            });
 
+        });
+    }
+    
     insertDataIntoLinks(url,elemnt){
         if(!url || !elemnt) return console.log("error in insertDataIntoLinks into main.js");
         fetch(url).then(res=>{
@@ -71,6 +91,41 @@ export class insertDataIntoInputs{
                     </article>
                 `)
             })
+            if(window.innerWidth < 800 ) return anmtionMobile.programsSection();
+            anmtionDesktop.programsSection();
         })
+    }
+
+    createQustions(url,container){
+        if(!url || !container) return console.log("error in creatCards into main.js");
+        fetch(url).then(res => {
+            if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+            return res.json();
+        }).then(data=>{
+            data.content.forEach((e,i)=>{
+                container.insertAdjacentHTML('beforeend',`
+                    <section class="qustion">
+                        <div class="qustion-content">
+                            <button type="button"></button>
+                            <h2>${i+1}) ${e.title}</h2>
+                        </div>
+
+                        <p>${e.content}</p>
+                    </section>
+                    `);
+                });
+                
+                const qusetions = document.querySelectorAll('#FAQ .qustion');
+                qusetions.forEach(q=>{
+                    const btns = q.querySelector('#FAQ .qustion button');
+
+                    btns.addEventListener('click',()=>{
+                        q.classList.toggle('open');
+                    });
+                });
+
+                if(window.innerWidth < 800 ) return anmtionMobile.qusationsSection();
+                anmtionDesktop.qusationsSection();
+            });
     }
 }

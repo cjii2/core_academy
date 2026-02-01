@@ -2,7 +2,7 @@
 // import gsap from 'gsap';
 
 
-class anmtionForDesktop{
+export class anmtionForDesktop{
     constructor(){
         this.mm = gsap.matchMedia();
         this.S = 800;
@@ -10,7 +10,7 @@ class anmtionForDesktop{
     }
     
     activeAnmtion(){
-        window.addEventListener('DOMContentLoaded',()=>{
+        document.addEventListener('DOMContentLoaded',()=>{
             gsap.registerPlugin(CustomEase,ScrollTrigger);
             CustomEase.create('hop','.52,0,.35,1')
             CustomEase.create('hop-tow','.54,.01,0,1')
@@ -18,11 +18,11 @@ class anmtionForDesktop{
             this.mm.add(`(min-width: ${this.S}px)`,()=>{
                 this.HomeSection();
                 this.aboutSection();
-                // this.programsSection();
                 this.whyUsSection();
                 this.qusationsSection();
-            })
-        })
+                // this.programsSection();
+            });
+        });
     }
 
     HomeSection(){
@@ -87,8 +87,9 @@ class anmtionForDesktop{
 
     programsSection(){
         const header = document.querySelectorAll('#programs .programs-head-children');
-        const cards = document.querySelectorAll('#programs .card');
-
+        const cards = document.querySelectorAll('#programs .card-container .card');
+        // console.log(cards);
+        if(!cards.length) return;
         const tl = gsap.timeline({
             scrollTrigger:{
                 trigger:'#programs',
@@ -155,7 +156,7 @@ class anmtionForDesktop{
     }
 }
 
-class anmtionForMobile{
+export class anmtionForMobile{
     constructor(){
         this.mm = gsap.matchMedia();
         this.S = 800;
@@ -170,7 +171,7 @@ class anmtionForMobile{
             this.mm.add(`(max-width: ${this.S}px)`,()=>{
                 this.HomeSection();
                 this.aboutSection();
-                this.programsSection();
+                // this.programsSection();
                 this.whyUsSection();
                 this.qusationsSection();
             })
@@ -243,7 +244,7 @@ class anmtionForMobile{
     programsSection(){
         const header = document.querySelectorAll('#programs .programs-head-children');
         const cards = document.querySelectorAll('#programs .card');
-
+        if(!cards.length) return
         const tl = gsap.timeline({
             scrollTrigger:{
                 trigger:'#programs',

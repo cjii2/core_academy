@@ -1,12 +1,15 @@
-function open_close_qustion(){
-    const qusetions = document.querySelectorAll('#FAQ .qustion');
+import {insertDataIntoInputs} from '../../main.js'
+// function open_close_qustion(){
     
-    qusetions.forEach(q=>{
-        const btns = q.querySelector('#FAQ .qustion button');
+// }
 
-        btns.addEventListener('click',()=>{
-            q.classList.toggle('open');
-        });
-    });
+
+function app(){
+    const elemnt = document.querySelector('#FAQ .qustions-container');
+    const url = 'src/json/qusationsSection/insertData.json';
+
+    const qusations = new insertDataIntoInputs();
+    qusations.createQustions(url, elemnt)
 }
-open_close_qustion();
+
+app();
