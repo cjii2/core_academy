@@ -94,6 +94,19 @@ export class insertDataIntoInputs{
         })
     }
 
+    inserDataIntoVideo(url,elemnt,log){
+        if(log) console.log(log)
+        if(!url || !elemnt) return console.log("error in inserDataIntoImg into main.js");
+
+        fetch(url).then(res=>{
+            if(!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+            return res.json();
+        }).then(data=>{
+            data.video.forEach((e,i)=>{
+                elemnt[i].src = e.url
+            })
+        })
+    }
     creatCards(url,fatherOfcards){
         if(!url || !fatherOfcards) return console.log("error in creatCards into main.js");
         fetch(url).then(res => {

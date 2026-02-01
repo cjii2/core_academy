@@ -13,11 +13,17 @@
         },
         {
             "title":"شخص يمشي و يفكر",
-            "url": "world/imgs/about/search-about-git.gif"
+            "url": "world/imgs/about/lamp.webp"
         },
         {
             "title":"شخص يمشي و يفكر",
             "url": "world/imgs/about/thinking.jpg"
+        }
+    ],
+
+    "video":[
+        {
+            "url": "world/imgs/about/Astronaut_Book.webm"
         }
     ]
 

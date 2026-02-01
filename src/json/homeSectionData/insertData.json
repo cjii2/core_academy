@@ -11,10 +11,9 @@
         }
     ],
 
-    "img":[
+    "video":[
         {
-            "title":"hero img person",
-            "url": "world/imgs/studey-home.gif"
+            "url": "world/imgs/home/0116.webm"
         }
     ]
 

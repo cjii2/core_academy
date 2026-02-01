@@ -22,7 +22,7 @@
 
             "img": {
                 "title": "شخص يمشي و يفكر",
-                "url": "world/imgs/programs/comuter.png"
+                "url": "world/imgs/programs/comuter.webp"
             }
         },
 
@@ -45,7 +45,7 @@
 
             "img": {
                 "title": "شخص يمشي و يفكر",
-                "url": "world/imgs/programs/web-developer.png"
+                "url": "world/imgs/programs/web-developer.webp"
             }
         },
 
@@ -68,7 +68,7 @@
 
             "img": {
                 "title": "شخص يمشي و يفكر",
-                "url": "world/imgs/programs/ui-ux.png"
+                "url": "world/imgs/programs/ui-ux.webp"
             }
         },
 
@@ -91,7 +91,7 @@
 
             "img": {
                 "title": "شخص يمشي و يفكر",
-                "url": "world/imgs/programs/chart.png"
+                "url": "world/imgs/programs/chart.webp"
             }
         }
 
