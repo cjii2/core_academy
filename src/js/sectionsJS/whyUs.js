@@ -1,6 +1,6 @@
 import {insertDataIntoInputs} from '../../main.js'
 
-function app(){
+export function whyUs(){
     const elemnt = document.querySelectorAll('#whyUs h2, #whyUs p');
     const links = document.querySelectorAll('#whyUs a');
     const stats = document.querySelectorAll('#whyUs h4 ,#whyUs strong');
@@ -12,5 +12,3 @@ function app(){
     homeElemnt.insertDataIntoTags(url , elemnt);
     homeElemnt.insertDataIntoStats(url , stats);
 }
-
-app();

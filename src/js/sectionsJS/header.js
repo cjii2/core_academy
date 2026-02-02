@@ -5,7 +5,7 @@ function open_close_menu(){
     document.getElementById('head').classList.toggle('open');
 }
 
-function app(){
+export function header(){
     const links = document.querySelectorAll('#head .nav-links a');
     const headerData = new insertDataIntoInputs();
     const url = 'src/json/headerSectionData/insertData.json';
@@ -13,4 +13,3 @@ function app(){
 }
 
 btn.addEventListener('click', open_close_menu);
-app();

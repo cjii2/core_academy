@@ -42,7 +42,8 @@ export class insertDataIntoInputs{
     insertDataIntoTags(url,elemnt,log){
         if(log) console.log(log);
         if(!url || !elemnt) return console.log("error in insertDataIntoTags into main.js");
-        fetch(url).then(res => {
+
+       fetch(url).then(res => {
             if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
             return res.json();
         }).then(data =>{
