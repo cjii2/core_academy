@@ -309,7 +309,7 @@ export class anmtionForMobile{
         })
     }
 }
-const desktop = new anmtionForDesktop();
-const mobile = new anmtionForMobile();
-desktop.activeAnmtion();
-mobile.activeAnmtion();
+// const desktop = new anmtionForDesktop();
+// const mobile = new anmtionForMobile();
+// desktop.activeAnmtion();
+// mobile.activeAnmtion();

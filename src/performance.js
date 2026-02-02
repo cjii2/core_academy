@@ -1,58 +1,50 @@
 
-import { anmtionForMobile , anmtionForDesktop} from '../src/js/anmtion/Anmtion.js'
-
-
 class performance{
     constructor(){
-        this.mobile = new anmtionForMobile();
-        this.desktop = new anmtionForDesktop();
     }
-    
-    async initHome(){
-        const { home } = await import('../src/js/sectionsJS/home.js');
-        const { header } = await import('../src/js/sectionsJS/header.js');
-
-        await Promise.all([
-            home(),
-            header()
-        ]);
-        await new Promise(res=>{requestAnimationFrame(res)})
-
-        if (this.desktop?.activeAnmtion) {
-            await this.desktop.activeAnmtion();
-        }
-        if (window.innerWidth < 800 && this.mobile?.activeAnmtion) {
-            this.mobile.activeAnmtion();
-        }
-    }
-
     async initAllSections(){
-        this.lazyLoad("../src/js/sectionsJS/aboutUs.js",'about','about');
-        this.lazyLoad("../src/js/sectionsJS/programs.js",'programs','programs');
-        this.lazyLoad("../src/js/sectionsJS/whyUs.js",'whyUs','whyUs');
+        this.lazyLoad("../src/js/sectionsJS/header.js",'head','header','HomeSection');
+        this.lazyLoad("../src/js/sectionsJS/home.js",'home','home');
+        this.lazyLoad("../src/js/sectionsJS/aboutUs.js",'about','about','aboutSection');
+        this.lazyLoad("../src/js/sectionsJS/programs.js",'programs','programs','programsSection');
+        this.lazyLoad("../src/js/sectionsJS/whyUs.js",'whyUs','whyUs','whyUsSection');
         this.lazyLoad("../src/js/sectionsJS/FAQ.js",'FAQ','FAQ');
     }
-    lazyLoad(url, sectionId, functionName) {
+
+    async loadAnimations(){
+        if (this.desktop) return;
+        const {anmtionForDesktop, anmtionForMobile} =
+            await import('../src/js/anmtion/Anmtion.js');
+        this.desktop = new anmtionForDesktop();
+        this.mobile = new anmtionForMobile();
+    }
+
+    lazyLoad(url, sectionId, functionName,anmtionFun) {
         const section = document.getElementById(sectionId);
         if (!section) return;
 
         const observer = new IntersectionObserver(async (entries) => {
             if (entries[0].isIntersecting) {
+                observer.disconnect();
                 const module = await import(/* @vite-ignore */ url);
                 if (module[functionName]) {
                     module[functionName]();
                 }
-                observer.disconnect();
+                
+                if(anmtionFun){
+                    await this.loadAnimations();
+                    if(window.innerWidth >= 800) return this.desktop[anmtionFun]();
+                    if(window.innerWidth < 800) this.mobile[anmtionFun]();
+                }
             }
         }, {
-            rootMargin: '200px'
+            rootMargin: '250px'
         });
 
         observer.observe(section);
     }
 
     activeApp(){
-        this.initHome();
         this.initAllSections();
     }
 }
