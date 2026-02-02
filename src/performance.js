@@ -8,13 +8,6 @@ class performance{
         this.desktop = new anmtionForDesktop();
     }
     
-    activeHomePage(){
-
-        this.initHome();
-        this.initAllSections();
-        
-    }
-    
     async initHome(){
         const { home } = await import('../src/js/sectionsJS/home.js');
         const { header } = await import('../src/js/sectionsJS/header.js');
@@ -59,7 +52,8 @@ class performance{
     }
 
     activeApp(){
-        this.activeHomePage();
+        this.initHome();
+        this.initAllSections();
     }
 }
 
