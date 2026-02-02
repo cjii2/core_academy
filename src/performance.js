@@ -9,12 +9,9 @@ class performance{
     }
     
     activeHomePage(){
-        const video = document.querySelector('#home video');
-        video.addEventListener('canplaythrough', () => {
-            document.body.style.opacity = "1";
-            this.initHome();
-            this.initAllSections();
-        },{once:true});
+
+        this.initHome();
+        this.initAllSections();
         
     }
     
