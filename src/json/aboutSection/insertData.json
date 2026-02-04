@@ -19,7 +19,12 @@
 
     "video":[
         {
-            "url": "world/imgs/about/Animation_Motion.webm"
+            "url": "world/imgs/about/Animation_Motion.webm",
+            "type": "video/webm"
+        },
+        {
+            "url": "world/imgs/about/Animation_Motion.mp4",
+            "type": "video/mp4"
         }
     ]
 

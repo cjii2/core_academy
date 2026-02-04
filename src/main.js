@@ -83,8 +83,8 @@ export class insertDataIntoInputs{
         if(!data || !elemnt) return console.log("error in inserDataIntoImg into main.js");
         elemnt.forEach((e,i)=>{
             e.src = data[i].url
-        })
-
+            e.type = data[i].type
+        });
     }
     creatCards(data,fatherOfcards){
         const levels = data.map(e => e.level);
