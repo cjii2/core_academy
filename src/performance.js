@@ -6,7 +6,7 @@ class performance{
         this.lazyLoad("../src/js/sectionsJS/header.js",'head','header','HomeSection');
         this.lazyLoad("../src/js/sectionsJS/home.js",'home','home');
         this.lazyLoad("../src/js/sectionsJS/aboutUs.js",'about','about','aboutSection');
-        this.lazyLoad("../src/js/sectionsJS/programs.js",'programs','programs','programsSection');
+        this.lazyLoad("../src/js/sectionsJS/programs.js",'programs','programs');
         this.lazyLoad("../src/js/sectionsJS/whyUs.js",'whyUs','whyUs','whyUsSection');
         this.lazyLoad("../src/js/sectionsJS/FAQ.js",'FAQ','FAQ');
     }
@@ -31,11 +31,13 @@ class performance{
                 const module = await import(/* @vite-ignore */ url);
                 if (module[functionName]) {
                     module[functionName]();
-                    if(anmtionFun){
-                        await this.loadAnimations();
+                }
+                if(anmtionFun){
+                    await this.loadAnimations();
+                    requestAnimationFrame(()=>{
                         if(window.innerWidth >= 800) return this.desktop[anmtionFun]();
                         if(window.innerWidth < 800) this.mobile[anmtionFun]();
-                    }
+                    })
                 }
                 
                 

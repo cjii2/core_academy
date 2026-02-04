@@ -130,9 +130,10 @@ export class insertDataIntoInputs{
             });
         });
 
-
-        if(window.innerWidth < 800 ) return anmtionMobile.programsSection();
-        anmtionDesktop.programsSection();
+        requestAnimationFrame(()=>{
+            if(window.innerWidth < 800 ) return anmtionMobile.programsSection();
+            anmtionDesktop.programsSection();
+        });
 
     }
     createQustions(data,container){
@@ -159,7 +160,10 @@ export class insertDataIntoInputs{
                 q.classList.toggle('open');
             });
         });
-        if(window.innerWidth < 800 ) return anmtionMobile.qusationsSection();
-        anmtionDesktop.qusationsSection();
+
+        requestAnimationFrame(()=>{
+            if(window.innerWidth < 800 ) return anmtionMobile.qusationsSection();
+            anmtionDesktop.qusationsSection();
+        });
     }
 }
