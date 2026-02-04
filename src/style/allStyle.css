@@ -164,6 +164,7 @@
     display: flex;
     width: 100%;
     height: 100%;
+    margin: 0 0 5em 0;
 }
 
 #about .container{
@@ -299,7 +300,9 @@
     min-height: 100%;
     margin: 10px 0;
 }
-
+#programs #filter_container{
+    opacity: 0;
+}
 #programs .programs-head{
     width: 100%;
     margin: 5% 0;
@@ -388,6 +391,7 @@
     border-radius: 3em;
     padding: 1.3em;
     text-align: end;
+    opacity: 0;
 }
 
 #whyUs .conatiner .card h2{
@@ -465,9 +469,9 @@
 
 
 @media (max-width:840px) {
-    /* #whyUs{
-        margin: 10%;
-    } */
+    #whyUs{
+        overflow: hidden;
+    }
 
     #whyUs .conatiner .card{
         border-radius: 2em;
@@ -495,7 +499,11 @@
 
 #FAQ{
     width: 100%;
-    height: 100%;
+    margin: 2em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 #FAQ .faq-head{
@@ -509,13 +517,12 @@
 
 #FAQ .qustions-container{
     width: 90%;
-    height: 90%;
+    min-height: 100%;
+    padding: 2% 0 5% 0;
     gap: 1em;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 #FAQ .qustion{
@@ -523,22 +530,19 @@
     border-radius: 10px;
     background: var(--qustion-Bg);
     width: 100%;
-    height: 7%;
+    height: 3.5em;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    text-align: start;
     direction: rtl;
     padding: 0 1em;
     transition: 0.4s;
 }
 
 #FAQ .qustion .qustion-content{
-    height: 3em;
     width: 100%;
     gap: 0.5em;
-    position: relative;
+    height: 3em;
     display: flex;
     align-items: center;
 }
@@ -561,7 +565,7 @@
 }
 
 #FAQ .qustion.open{
-    height: 20%;
+    height: 7em;
 }
 #FAQ .qustion.open button{
     background-color: rgb(0,70, 67, 1);
@@ -574,8 +578,7 @@
 #FAQ .qustion p{
     display: none;
     position: absolute;
-    top: 40%;
-    right: 2em;
+    top: 40px;
     color: var(--text-paragraph);
     font-size: var(--p-font-size);
 }

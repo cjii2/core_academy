@@ -26,19 +26,22 @@ class performance{
         const observer = new IntersectionObserver(async (entries) => {
             if (entries[0].isIntersecting) {
                 observer.disconnect();
+
+                
                 const module = await import(/* @vite-ignore */ url);
                 if (module[functionName]) {
                     module[functionName]();
+                    if(anmtionFun){
+                        await this.loadAnimations();
+                        if(window.innerWidth >= 800) return this.desktop[anmtionFun]();
+                        if(window.innerWidth < 800) this.mobile[anmtionFun]();
+                    }
                 }
                 
-                if(anmtionFun){
-                    await this.loadAnimations();
-                    if(window.innerWidth >= 800) return this.desktop[anmtionFun]();
-                    if(window.innerWidth < 800) this.mobile[anmtionFun]();
-                }
+                
             }
         }, {
-            rootMargin: '250px'
+            rootMargin: '300px'
         });
 
         observer.observe(section);
