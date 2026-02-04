@@ -9,11 +9,7 @@
     "img":[
         {
             "title":"شخص يمشي و يفكر",
-            "url": "world/imgs/about/walk-person.gif"
-        },
-        {
-            "title":"شخص يمشي و يفكر",
-            "url": "world/imgs/about/lamp.webp"
+            "url": "world/imgs/about/person-reaid-book.webp"
         },
         {
             "title":"شخص يمشي و يفكر",
@@ -23,7 +19,7 @@
 
     "video":[
         {
-            "url": "world/imgs/about/Astronaut_Book.webm"
+            "url": "world/imgs/about/Animation_Motion.webm"
         }
     ]
 
