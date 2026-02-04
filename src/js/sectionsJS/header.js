@@ -7,9 +7,9 @@ function open_close_menu(){
 
 export function header(){
     const links = document.querySelectorAll('#head .nav-links a');
-    const headerData = new insertDataIntoInputs();
     const url = 'src/json/headerSectionData/insertData.json';
-    headerData.insertDataIntoLinks(url,links);
+    const headerData = new insertDataIntoInputs(url);
+    headerData.getData('links').then(data=>headerData.insertDataIntoLinks(data,links));
 }
 
 btn.addEventListener('click', open_close_menu);

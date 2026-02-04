@@ -305,7 +305,7 @@
 }
 #programs .programs-head{
     width: 100%;
-    margin: 5% 0;
+    height: 6em;
     text-align: center;
     color: var(--text-heading);
 }

@@ -8,10 +8,10 @@ export function whyUs(){
     const stats = document.querySelectorAll('#whyUs h4 ,#whyUs strong');
     const url = 'src/json/whyUsSection/insertData.json';
     
-    const homeElemnt = new insertDataIntoInputs();
-    homeElemnt.insertDataIntoLinks(url , links);
-    homeElemnt.insertDataIntoTags(url , elemnt);
-    homeElemnt.insertDataIntoStats(url , stats);
+    const whyUs = new insertDataIntoInputs(url);
+    whyUs.getData('links').then(data=>whyUs.insertDataIntoLinks(data,links));
+    whyUs.getData('content').then(data=>whyUs.insertDataIntoTags(data,elemnt));
+    whyUs.getData('status').then(data=>whyUs.insertDataIntoTags(data,stats));
 
     if(conatiner.children.length > 0){
         cards.forEach(e=>{

@@ -6,8 +6,9 @@ export function about(){
     const url = 'src/json/aboutSection/insertData.json';
 
 
-    const about = new insertDataIntoInputs();
+    const about = new insertDataIntoInputs(url);
 
-    about.inserDataIntoImg(url,imgs)
-    about.insertDataIntoTags(url,elemnt)
+    about.getData('img').then(data=>about.inserDataIntoImg(data,imgs));
+    about.getData('content').then(data=>about.insertDataIntoTags(data,elemnt));
+    
 }
